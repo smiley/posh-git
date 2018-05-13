@@ -373,7 +373,7 @@ function GitTabExpansionInternal($lastBlock, $GitStatus = $null) {
         }
 
         # Handles git checkout <ref>
-        "^(?:checkout).* (?<ref>\S*)$" {
+        "^(?:checkout|update-branch).* (?<ref>\S*)$" {
             & {
                 gitBranches $matches['ref'] $true
                 gitRemoteUniqueBranches $matches['ref']
